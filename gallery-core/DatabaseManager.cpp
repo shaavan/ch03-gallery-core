@@ -9,10 +9,13 @@ DatabaseManager& DatabaseManager::instance()
 }
 
 DatabaseManager::DatabaseManager(const QString& path) :
-    mDatabase(new QSqlDatabase(QSqlDatabase::addDatabase("QSQLite")))
+    mDatabase(new QSqlDatabase(QSqlDatabase::addDatabase("QSQLite"))),
+    albumDao(*mDatabase)
 {
     mDatabase->setDatabaseName(path);
     mDatabase->open();
+
+    albumDao.init();
 }
 
 DatabaseManager::~DatabaseManager()
