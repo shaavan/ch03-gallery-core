@@ -15,12 +15,14 @@ CONFIG += c++11
 SOURCES += \
     Album.cpp \
     AlbumDao.cpp \
+    AlbumModel.cpp \
     DatabaseManager.cpp \
     Picture.cpp \
     PictureDao.cpp
 
 HEADERS += \
     AlbumDao.h \
+    AlbumModel.h \
     DatabaseManager.h \
     Picture.h \
     PictureDao.h \
