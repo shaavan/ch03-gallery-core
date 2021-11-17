@@ -54,7 +54,7 @@ void PictureDao::removePicturesForAlbum(int albumId) const
     query.exec();
 }
 
-std::unique_ptr<std::vector<std::unique_ptr<Picture>>> PictureDao::picturesforAlbum(int albumId) const
+std::unique_ptr<std::vector<std::unique_ptr<Picture>>> PictureDao::picturesForAlbum(int albumId) const
 {
     QSqlQuery query(mDatabase);
     query.prepare("SELECT * FROM pictures WEHRE (:album_id)");
